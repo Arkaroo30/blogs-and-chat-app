@@ -1,0 +1,42 @@
+<template>
+    <router-link to="/chatroom/group1">
+        <div class="group">
+            <h3>Frontend Development Discussion</h3>
+            <p>HTML,CSS,Javascript</p>
+        </div>
+    </router-link>
+    <router-link to="/chatroom/group2">
+        <div class="group">
+            <h3>Backend Development Discussion</h3>
+            <p>PHP,Laravel</p>
+        </div>
+    </router-link>
+    <router-link to="/chatroom/group3">
+        <div class="group">
+            <h3>Networking Discussion</h3>
+            <p>WAN,LAN,INTERNET</p>
+        </div>
+    </router-link>
+    <router-link to="/">Back To Blogs</router-link>
+</template>
+
+<script>
+export default {
+    setup(){
+
+    }
+}
+</script>
+
+<style>
+    .group{
+        border-radius: 28px;
+        padding: 20px;
+        background-color: #f2f2f2;
+        cursor: pointer;
+        margin: 10px;
+    }
+    h3{
+        color: indigo;
+    }
+</style>

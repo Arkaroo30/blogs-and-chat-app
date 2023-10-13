@@ -1,0 +1,16 @@
+{
+  "post": [
+    {
+      "title": "post title 1",
+      "detail": "post detail 1",
+      "id": 1,
+      "tags": "html"
+    },
+    {
+      "title": "post title 2",
+      "detail": "post detail 2",
+      "id": 2,
+      "tags": "css"
+    }
+  ]
+}
