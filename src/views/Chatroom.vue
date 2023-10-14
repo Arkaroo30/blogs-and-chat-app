@@ -2,8 +2,10 @@
   <div class="container">
     <Navbar/>
     <ChatList/>
-    <!-- <ChatWindow/> -->
-    <!-- <NewChatForm/> -->
+    <span @click="toBlogs" class="arrow_back">
+      <span class="material-icons">arrow_back</span>
+      <p>Back to blogs</p>
+    </span>
   </div>
 </template>
 
@@ -25,10 +27,19 @@ export default {
           router.push("/login");
         }
       })
+
+      let toBlogs=()=>{
+          router.push("/");
+      }
+
+      return {toBlogs}
     }
 }
 </script>
 
-<style>
-
+<style scoped>
+  span p{
+    font-size: 18px;
+    margin: 0;
+  }
 </style>

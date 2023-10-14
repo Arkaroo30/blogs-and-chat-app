@@ -22,7 +22,6 @@ export default {
                 context.emit("enterChatroom");
             }
         }
-
         return {email,password,login,error};
     }
 }

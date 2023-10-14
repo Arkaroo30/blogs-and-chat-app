@@ -7,10 +7,12 @@
         <div v-for="tag in post.tags" :key="tag" class="pill">
             <router-link :to="{name:'tag',params:{tag:tag}}">{{tag}}</router-link>
         </div>
+        <p>Posted at {{formattedPost.created_at}} ago</p>
     </div>
 </template>
 
 <script>
+import {formatDistanceToNow} from "date-fns"
 import { computed } from 'vue'
 export default {
     props: ['post'],
@@ -18,7 +20,13 @@ export default {
         let cutDetail=computed(()=>{
             return props.post.detail.substring(0,250)+"...";
         })
-        return {cutDetail}
+
+        let formattedPost=computed(()=>{
+                let formatTime=formatDistanceToNow(props.post.created_at.toDate());
+                return {...props.post,created_at:formatTime}
+        })
+
+        return {cutDetail,formattedPost}
     }
 }
 </script>

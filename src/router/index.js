@@ -15,14 +15,14 @@ const routes = [
     path:"/",
     name: "welcome",
     component: Welcome,
-    beforeEnter(to,from,next){
-      let user=auth.currentUser;
-      if(!user){
-        next();
-      }else{
-        next({name:"Chatroom"});
-      }
-    }
+    // beforeEnter(to,from,next){
+    //   let user=auth.currentUser;
+    //   if(!user){
+    //     next();
+    //   }else{
+    //     next({name:"Chatroom"});
+    //   }
+    // }
   },
   {
     path: "/login",
@@ -50,14 +50,14 @@ const routes = [
     path: "/chatroom",
     name: "Chatroom",
     component: Chatroom,
-    // beforeEnter(to,from,next){
-    //   let user=auth.currentUser;
-    //   if(user){
-    //     next();
-    //   }else{
-    //     next({name:"login"})
-    //   }
-    // }
+    beforeEnter(to,from,next){
+      let user=auth.currentUser;
+      if(user){
+        next();
+      }else{
+        next({name:"login"})
+      }
+    }
   },
   {
     path: "/chatroom/group1",

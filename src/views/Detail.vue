@@ -4,7 +4,8 @@
         <div v-if="post" class="post">
         <h2>{{post.title}}</h2>
         <p>{{post.detail}}</p>
-        <button class="delete" @click="deletePost">Delete</button>
+        <!-- <button class="delete" @click="deletePost">Delete</button> -->
+        <p class="author">Written By {{post.name}}</p>
       </div>
       <div v-else class="spinner-grow" role="status">
           <span class="sr-only">Loading...</span>
@@ -76,5 +77,10 @@ export default {
         border-radius: 0%;
         margin: 20px auto;
         cursor: pointer;
+      }
+      .author{
+        font-weight: 900;
+        letter-spacing: 2px;
+        text-decoration: underline;
       }
 </style>

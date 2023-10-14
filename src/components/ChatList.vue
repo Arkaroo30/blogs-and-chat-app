@@ -1,5 +1,6 @@
 <template>
-    <router-link to="/chatroom/group1">
+    <div class="chat-name">
+            <router-link to="/chatroom/group1">
         <div class="group">
             <h3>Frontend Development Discussion</h3>
             <p>HTML,CSS,Javascript</p>
@@ -17,7 +18,8 @@
             <p>WAN,LAN,INTERNET</p>
         </div>
     </router-link>
-    <router-link to="/">Back To Blogs</router-link>
+    </div>
+
 </template>
 
 <script>
@@ -36,7 +38,16 @@ export default {
         cursor: pointer;
         margin: 10px;
     }
-    h3{
-        color: indigo;
+    .chat-name h3{
+        color: rgb(79, 79, 79);
+        text-decoration: none;
+    }
+    .chat-name p{
+        color: rgb(79, 79, 79);
+        text-decoration: none;
+    }
+    .chat-name a{
+        color: rgb(79, 79, 79);
+        text-decoration: none;
     }
 </style>

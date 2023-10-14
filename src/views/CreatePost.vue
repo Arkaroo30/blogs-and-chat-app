@@ -23,10 +23,12 @@ import {db, timestamp} from '../firebase/config'
 import NavBlog from "../components/NavBlog"
 import {useRouter} from "vue-router"
 import { ref } from 'vue'
+import getUser from '../composables/getUser'
 export default {
     components: {NavBlog},
     setup(){
         let router=useRouter();
+        let {user}=getUser();
         let title=ref("");
         let detail=ref("");
         let tag=ref("");
@@ -43,9 +45,11 @@ export default {
                         title:title.value,
                         detail:detail.value,
                         tags:tags.value,
-                        created_at:timestamp()
+                        created_at:timestamp(),
+                        name:user.value.displayName
                     };
             let response=await db.collection("posts").add(newPost);
+            console.log(user.value.displayName);
             router.push("/");
         }
         return {title,detail,tag,handleKeydown,tags,addPost};
