@@ -22,7 +22,7 @@ export default {
         let signup=async()=>{
            let response=await createAccount(email.value,password.value,displayName.value);
            if(response){
-            context.emit("enterChatroom");
+            context.emit("enterBackHome");
             // console.log(response);
            }
         }

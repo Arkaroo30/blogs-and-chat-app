@@ -19,7 +19,7 @@ export default {
         let login=async()=>{
             let response=await signIn(email.value,password.value);
             if(response){
-                context.emit("enterChatroom");
+                context.emit("enterBackHome");
             }
         }
         return {email,password,login,error};

@@ -3,11 +3,12 @@
         <router-link :to="{name:'detail',params:{id:post.id}}">
         <h2>{{post.title}}</h2>
         </router-link>
+        <p class="post_created">Posted at {{formattedPost.created_at}} ago</p>
         <p>{{cutDetail}}</p>
         <div v-for="tag in post.tags" :key="tag" class="pill">
             <router-link :to="{name:'tag',params:{tag:tag}}">{{tag}}</router-link>
         </div>
-        <p>Posted at {{formattedPost.created_at}} ago</p>
+        <!-- <p class="post_created">Posted at {{formattedPost.created_at}} ago</p> -->
     </div>
 </template>
 
@@ -65,5 +66,12 @@ export default {
         padding: 8px;
         border-radius: 20px;
         font-size: 14px;
+      }
+
+      .post_created{
+        margin-top: 10px;
+        font-size: 15px;
+        color: #18e1bc;
+        font-style: italic;
       }
 </style>

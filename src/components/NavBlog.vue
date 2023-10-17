@@ -5,7 +5,7 @@
         <router-link :to="{name:'welcome'}">Home</router-link>
         <span @click="toCreatePost">Create Post</span>
         <!-- <router-link :to="{name: 'login'}">Go To Chat Room</router-link> -->
-        <span @click="toChatroom">Go To Chat Room</span>
+        <span @click="toChatroom">Chatroom</span>
     </nav>
   </header>
 </template>
